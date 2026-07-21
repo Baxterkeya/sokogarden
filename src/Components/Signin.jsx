@@ -1,6 +1,6 @@
 import axios from "axios"
 import{useState} from "react"
-import { Link ,useNavigate,useNavigate } from "react-router-dom"
+import { Link ,useNavigate } from "react-router-dom"
 
 const Signin=()=>{
     let navigate=useNavigate();
@@ -38,17 +38,17 @@ const Signin=()=>{
     return(
         <div className="row justify-content-center">
         <div className="col-md-6 card shadow p-4 mt-3 text-center">
-            <h1 className="">signIn</h1>
+            <h1 className="">signI👤</h1>
             {/* bind the state here  */}
             <h1 className="text-warning">{loading}</h1>
             <h1 className="text-info">{success}</h1>
             <h1 className="text-info">{error}</h1>
             <form action="" onSubmit={handlesubmit}>
-                <input type="email" className="form-control" placeholder="Email"  
+                <input type="email" className="form-control" placeholder="📧Email"  
                 onChange={(e)=>setEmail(e.target.value)}
                 /><br />
                 <input type="password" className="form-control"
-                placeholder="Password" 
+                placeholder="🔑Password" 
                 onChange={(e)=>setPassword (e.target.value)}
                 /> <br/>
                 <input type="submit" value="Sign in" className="form-control bg-primary text-white" /><br />

@@ -35,24 +35,24 @@ const Signup=()=>{
     return(
         <div className="row justify-content-center">
            <div className="col-md-6 card shadow p-3 mt-3 text-center ">
-            <h1 className="text-black">signup</h1>
+            <h1 className="text-black">signup 👤</h1>
             {/* bind the state here  */}
             <h1 className="text-danger">{loading}</h1>
             <h1 className="text-success">{success}</h1>
             <h1 className="text-danger">{error}</h1>
             <form action="" onSubmit={handlesubmit}>
-                <input type="text" className="form-control"  placeholder="Enter username"
+                <input type="text" className="form-control"  placeholder=" 👤Enter username"
                 onChange={(e)=>setUsername(e.target.value)}
                 /><br />
-                <input type="email" className="form-control" placeholder="Enter email" 
+                <input type="email" className="form-control" placeholder=" 📧Enter email" 
                 onChange={(e)=>setEmail(e.target.value)}/><br />
-                <input type="password" className="form-control"placeholder="Enter password" 
+                <input type="password" className="form-control"placeholder=" 🔑Enter password" 
                 onChange={(e)=>setPassword (e.target.value)}
                 /><br />
-                <input type="number" className="form-control" placeholder="Enter Phone"
+                <input type="number" className="form-control" placeholder=" ☎️Enter Phone"
                 onChange={(e)=>setPhone (e.target.value)}
                 /><br />
-                <input type="submit" value="signup" className="form-control bg-danger text-white" placeholder="signup"/><br />
+                <input type="submit" value="signup" className="form-control bg-danger text-white" placeholder="👥signup"/><br />
                 <p>Already have an account?<Link to="/signin">Signin</Link></p>
             </form>
            </div>

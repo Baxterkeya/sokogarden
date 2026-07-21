@@ -1,7 +1,57 @@
+import axios from "axios"
+import { useState ,useEffect } from "react"
+import { useNavigate } from "react-router-dom"
+import Carousel from "./Carousel"
 const Getproducts=()=>{
+    let navigate= useNavigate()
+    // declare the three status for getting products 
+    const[loading,setLoading]=useState("")
+    const[products,setProducts]=useState([])
+    const[error,setError]=useState("")
+    // function to get products 
+    const getproducts = async ()=>{
+        setLoading("please wait......")
+        try {
+            const response= await axios.get("https://baxter.alwaysdata.net/api/getproducts")
+            setProducts(response.data)
+            setLoading("")
+        } catch (error) {
+            setError(error.message)
+            setLoading("")
+        }
+    }
+    // call the function 
+    useEffect(()=>{
+        getproducts()
+    })
+    // log to see if we have products 
+    console.log(products);
+    // image path 
+    const imagepath ="https://baxter.alwaysdata.net/static/images/"
+
     return(
-        <div>
-            <h1>Get products component</h1>
+        <div className="row container-fluid justify-content">
+            <h1 className="text-warning text-center">Available products</h1>
+            {/* carousel goes here  */}
+            <Carousel/>
+            {/* map the products  */}
+            {products.map (singleproduct=>(
+
+            
+            <div className="col-md-3 mb-4">
+                <div className="card shadow p-3">
+                    {/* image gose here  */}
+                    <img src={imagepath + singleproduct.product_photo} alt="" height={200} />
+                    <div className="card-body text-center">
+                        <h5 className="text-danger ">{singleproduct.product_name}</h5>
+                        <p>{singleproduct.product_description.slice(0,30)}...</p>
+                        <b className="text-warning">Ksh{singleproduct.product_cost}</b><br />
+                        <span className="badge bg-success ">{singleproduct.product_category}</span><br /><br /> 
+                        <button className="btn btn-danger w-100" onClick={()=>navigate("/mpesa" ,{state:{singleproduct}})}>Purchase Now </button>
+                    </div>
+                </div>
+            </div>
+            ))}
         </div>
     )
 }
