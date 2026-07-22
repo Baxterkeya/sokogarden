@@ -55,6 +55,8 @@ const Getproducts=()=>{
             
             {/* carousel goes here  */}
             <Carousel/>
+            <h1>{loading}</h1>
+            <h1>{error}</h1>
             {/* map the products  */}
             {filtered_products.slice(0,visiblecount).map((singleproduct)=>
 
