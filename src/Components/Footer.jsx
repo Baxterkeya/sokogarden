@@ -19,10 +19,17 @@ export const Footer = () => {
     </div>
     <div class="col-md-4">
       <h3 class="text-center text-white">Stay conected</h3>
-      <a href="https;//www,facebook.com"></a>
+      <a href="https://www,facebook.com"
+      >
         <img src="images/fb.png" alt="facebook"/>
-        <a href="https;//www.instagram.com"></a>
+
+
+
+      </a>
+        <a href="https://www.instagram.com">
           <img src="images/in.png" alt="instagram"/>
+        
+        </a>
           <a href="htpps://www.x.com">
             <img src="images/x.png" alt="x"/>
           </a>

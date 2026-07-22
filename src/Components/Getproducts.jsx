@@ -15,8 +15,7 @@ const Getproducts=()=>{
     // filteringlogic 
     const filtered_products=products.filter((item)=>    
         item.product_name.toLowerCase().includes(search.toLowerCase())||
-    item.product_description.toLowerCase().includes(search.
-        toLowerCase())
+        item.product_description.toLowerCase().includes(search.toLowerCase())
     );
 
 
