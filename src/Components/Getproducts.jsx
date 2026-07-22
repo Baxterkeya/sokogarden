@@ -8,6 +8,18 @@ const Getproducts=()=>{
     const[loading,setLoading]=useState("")
     const[products,setProducts]=useState([])
     const[error,setError]=useState("")
+
+    // define the state 
+    const[search,setSearch]=useState("");
+    const[visiblecount,setVisiblecount]=useState(4);
+    // filteringlogic 
+    const filtered_products=products.filter((item)=>    
+        item.product_name.toLowerCase().includes(search.toLowerCase())||
+    item.product_description.toLowerCase().includes(search.
+        toLowerCase())
+    );
+
+
     // function to get products 
     const getproducts = async ()=>{
         setLoading("please wait......")
@@ -31,11 +43,20 @@ const Getproducts=()=>{
 
     return(
         <div className="row container-fluid justify-content">
-            <h1 className="text-warning text-center">Available products</h1>
+            <div className=" row justify-content-center mt-3 mb-3">
+                <input
+            className="form-control w-50"
+            type="search"
+            placeholder="Search Products..."
+            value={search}
+            onChange={(e) => setSearch(e.target.value)}
+            />
+</div>
+            
             {/* carousel goes here  */}
             <Carousel/>
             {/* map the products  */}
-            {products.map (singleproduct=>(
+            {filtered_products.slice(0,visiblecount).map((singleproduct)=>
 
             
             <div className="col-md-3 mb-4">
@@ -51,8 +72,19 @@ const Getproducts=()=>{
                     </div>
                 </div>
             </div>
-            ))}
+            )}
+            {/* load more buttongoes here  */}
+            {visiblecount<filtered_products.length &&(
+                <div className="text-center m-4">
+                    <button className="btn btn-primary"
+                    onClick={()=>setVisiblecount(visiblecount+8)}>
+                     load more   
+                    </button>
+                    </div>
+            )}
+            
         </div>
-    )
-}
+    
+        )}
+
 export default Getproducts

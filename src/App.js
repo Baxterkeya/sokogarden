@@ -19,10 +19,10 @@ function App() {
     <div className="App">
       {/* navbargoes here  */}
       <Navbar />
-      <header className='bg-primary'>
+      <header className='bg-dark'>
       <h1 className='text-danger text-center'>Welcome to Reactjs</h1> 
       </header>
-      <nav>
+      <nav className='text-center'>
       <Link to = "/signup" className='btn btn-outline-danger me-2'>Signup</Link> 
       <Link to = "/signin" className='btn btn-outline-danger me-2'>Signin</Link>  
       <Link to = "/add" className='btn btn-outline-danger me-2'>Addproducts</Link> 

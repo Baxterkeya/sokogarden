@@ -4,9 +4,9 @@ const Navbar = () => {
   return (
      <section class="row">
     <div class="col-md-12">
-      <nav class="navbar navbar-expand-md bg-warning">
+      <nav class="navbar navbar-expand-md bg-success">
         {/* <!-- brand --> */}
-         <a href="/" class="navbar-brand"><b class="text-danger">CAR SOKO</b></a>
+         <a href="/" class="navbar-brand"><b class="text-danger-">CAR SOKO</b></a>
          {/* <!-- button --> */}
           <button class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navabarcollapes">
             <span class="navbar-toggler-icon"></span>

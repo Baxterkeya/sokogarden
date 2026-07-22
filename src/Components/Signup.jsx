@@ -13,6 +13,8 @@ const Signup=()=>{
     const[loading,setLoading]=useState("")
     const[success,setSuccess]=useState ("")
     const[error,setError]=useState("")
+    // state for showing hiding password
+    const[showPassword,setShowPassword]=useState(false)
     // function to sighn up 
     const handlesubmit =async (e)=>{
             e.preventDefault()
@@ -46,9 +48,23 @@ const Signup=()=>{
                 /><br />
                 <input type="email" className="form-control" placeholder=" 📧Enter email" 
                 onChange={(e)=>setEmail(e.target.value)}/><br />
-                <input type="password" className="form-control"placeholder=" 🔑Enter password" 
+                {/* <input type="password" className="form-control"placeholder=" 🔑Enter password" 
                 onChange={(e)=>setPassword (e.target.value)}
-                /><br />
+                /><br /> */}
+                <div className="input-group">
+                    <input type={showPassword? "text":"password"}
+                    className="form-control"
+                    placeholder="🔑Enter password"
+                    onChange={(e)=>setPassword(e.target.value)} />
+                    <span className="input-group-text"
+                    style={{cursor:"pointer"}}
+                    onClick={()=>setShowPassword(!showPassword)}>
+                        {showPassword ?"🔓":"👁️"}
+
+
+                    </span>
+                </div>
+                <br />  
                 <input type="number" className="form-control" placeholder=" ☎️Enter Phone"
                 onChange={(e)=>setPhone (e.target.value)}
                 /><br />

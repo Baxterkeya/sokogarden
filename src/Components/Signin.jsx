@@ -11,6 +11,8 @@ const Signin=()=>{
      const[loading,setLoading]=useState("")
     const[success,setSuccess]=useState ("")
     const[error,setError]=useState("")
+    // state for showing hiding password
+    const[showPassword,setShowPassword]=useState(false)
     // function to sign in 
     const handlesubmit=async (e)=>{
         e.preventDefault ()
@@ -38,7 +40,7 @@ const Signin=()=>{
     return(
         <div className="row justify-content-center">
         <div className="col-md-6 card shadow p-4 mt-3 text-center">
-            <h1 className="">signI👤</h1>
+            <h1 className="">Sign In 👤</h1>
             {/* bind the state here  */}
             <h1 className="text-warning">{loading}</h1>
             <h1 className="text-info">{success}</h1>
@@ -47,10 +49,25 @@ const Signin=()=>{
                 <input type="email" className="form-control" placeholder="📧Email"  
                 onChange={(e)=>setEmail(e.target.value)}
                 /><br />
-                <input type="password" className="form-control"
+                {/* <input type="password" className="form-control"
                 placeholder="🔑Password" 
                 onChange={(e)=>setPassword (e.target.value)}
-                /> <br/>
+                /> <br/> */}
+                 
+                <div className="input-group">
+                    <input type={showPassword? "text":"password"}
+                    className="form-control"
+                    placeholder="🔑Enter password"
+                    onChange={(e)=>setPassword(e.target.value)} />
+                    <span className="input-group-text"
+                    style={{cursor:"pointer"}}
+                    onClick={()=>setShowPassword(!showPassword)}>
+                        {showPassword ?"🔓":"👁️"}
+
+
+                    </span>
+                </div>
+                <br />  
                 <input type="submit" value="Sign in" className="form-control bg-primary text-white" /><br />
                 <p>Already have an account <Link to="/signup">sign up</Link></p>
             </form>
