@@ -9,6 +9,7 @@ import Getproducts from './Components/Getproducts';
 import Mpesapayment from './Components/Mpesapayment';
 import Navbar from './Components/Navbar';
 import { Footer } from './Components/Footer';
+import Videos from './Components/Videos';
 
 
 function App() {
@@ -37,7 +38,7 @@ function App() {
         <Route path="/add" element={ <Addproducts/> } />
         <Route path="/" element={ <Getproducts/> } />
         <Route path="/mpesa" element={ <Mpesapayment/> } />
-
+        <Route path="/videos" element = {<Videos/>}/>
        </Routes>
 
      
